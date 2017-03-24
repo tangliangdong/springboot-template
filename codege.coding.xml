@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<config>
+		<param name="project_name" value="springboot"></param>
+		<param name="driver" value="com.mysql.jdbc.Driver"></param>
+		<param name="dbname" value="activity"></param>
+		<param name="username" value="root"></param>
+		<param name="password" value="root"></param>
+		<param name="jdbc_prex" value=""></param>
+	</config>
+	<!-- %表示针对jdbc_prex表前缀下的所有表一起生成，也可以写具体表名“表前缀_表名”，可以写多个table节点 -->
+	<tables>
+		<table name="%">
+		    <!-- 里面的field表示JSP视图中需要特殊化处理的字段，没有列出的字段一律按普通文本框input显示 -->
+			<field name="id" type="checkbox"></field>
+		</table>
+		<!-- <table name="x_abc">
+		    里面的field表示JSP视图中需要特殊化处理的字段，没有列出的字段一律按普通文本框input显示
+			<field name="id" type="checkbox"></field>
+		</table>
+		<table name="x_efg">
+		    里面的field表示JSP视图中需要特殊化处理的字段，没有列出的字段一律按普通文本框input显示
+			<field name="id" type="checkbox"></field>
+		</table> -->
+	</tables>
+</config>

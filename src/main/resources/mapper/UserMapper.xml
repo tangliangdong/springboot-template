@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="flybear.hziee.app.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="flybear.hziee.app.model.User">
+    		<id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="showname" property="showname" jdbcType="VARCHAR"/>
+        <result column="power" property="power" jdbcType="INTEGER"/>
+  </resultMap>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id,username,password,showname,power from user
+  </select>
+    
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id,username,password,showname,power from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <update id="updateByPrimaryKey" parameterType="flybear.hziee.app.model.User">
+    update user set username = #{username,jdbcType=VARCHAR},password = #{password,jdbcType=VARCHAR},showname = #{showname,jdbcType=VARCHAR},power = #{power,jdbcType=INTEGER},
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <insert id="insert" parameterType="flybear.hziee.app.model.User">
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user (id,username,password,showname,power)  
+    values ( #{id,jdbcType=INTEGER},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{showname,jdbcType=VARCHAR},#{power,jdbcType=INTEGER})
+  </insert>  
+</mapper>
