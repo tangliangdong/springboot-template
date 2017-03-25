@@ -6,6 +6,7 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -155,7 +156,6 @@
                 </executions> 
 			</plugin>
 		</plugins>
-		<finalName>sxxt</finalName>
+		<finalName>springboot</finalName>
 	</build>
 </project>
-

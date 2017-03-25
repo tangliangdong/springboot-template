@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import flybear.hziee.core.base.BaseController;
 
 @Controller
-@RequestMapping("index")
+@RequestMapping("")
 public class IndexController extends BaseController{
 	
 	@RequestMapping("")
